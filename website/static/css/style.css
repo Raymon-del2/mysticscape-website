@@ -272,6 +272,18 @@ a:hover {
     border-bottom: 1px solid var(--border-color);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
 .logo a {
     font-size: 1.5rem;
     font-weight: bold;
@@ -282,6 +294,14 @@ a:hover {
 
 .logo a:hover {
     color: var(--primary-color);
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .nav-buttons {
