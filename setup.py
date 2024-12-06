@@ -1,0 +1,37 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="mysticscape",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        'numpy>=1.21.0',
+        'OpenGL>=3.1.6',
+        'PyQt6>=6.4.0',
+        'PySide6>=6.4.0',
+        'scipy>=1.7.0',
+        'opencv-python>=4.6.0',
+        'torch>=1.10.0',
+        'pyopengl>=3.1.6',
+        'pillow>=9.0.0',
+        'pyrender>=0.1.45',
+        'trimesh>=3.9.0',
+        'pyglet>=2.0.0',
+        'matplotlib>=3.5.0',
+        'networkx>=2.6.0',
+    ],
+    author="Raymond Wambui",
+    author_email="wambuiraymond03@gmail.com",
+    description="A comprehensive 3D software suite for Windows",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: End Users/Desktop",
+        "License :: Other/Proprietary License",
+        "Operating System :: Microsoft :: Windows",
+        "Programming Language :: Python :: 3.8",
+        "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    ],
+    python_requires=">=3.8",
+)

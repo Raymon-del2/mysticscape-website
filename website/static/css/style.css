@@ -1,0 +1,795 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-background: #1a1a1a;
+    --input-background: #2d2d2d;
+    --border-color: #333333;
+    --hover-color: #2c2c2c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+}
+
+.auth-card h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--secondary-color);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Payment Styles */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.payment-box {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.price-info {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.features li {
+    padding: 8px 0;
+    color: #666;
+}
+
+.features li:before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.payment-button {
+    background-color: #1a73e8;
+    color: var(--text-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.payment-button:hover {
+    background-color: #1557b0;
+}
+
+.secure-note {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.pricing-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.pricing-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 300px;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.pricing-card h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.savings {
+    color: #e44d26;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.pricing-card li {
+    margin: 0.8rem 0;
+    color: #666;
+}
+
+.trial-note {
+    margin: 2rem 0 1rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.trial-btn {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.trial-btn:hover {
+    background: var(--secondary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--primary-color);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:not(.signup-btn):not(.download-btn) {
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.nav-btn:not(.signup-btn):not(.download-btn):hover {
+    background: var(--hover-color);
+    border-color: var(--border-color);
+}
+
+.signup-btn {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.signup-btn:hover {
+    background: var(--secondary-color);
+}
+
+.download-btn {
+    background: #2196F3;
+    color: var(--text-color);
+}
+
+.download-btn:hover {
+    background: #1976D2;
+}
+
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    background: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.alert-error {
+    background: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+main {
+    padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Terms and Conditions Page */
+.terms-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.terms-content {
+    margin-bottom: 2rem;
+}
+
+.terms-content h2 {
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.terms-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-container label {
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.accept-btn {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.accept-btn:hover {
+    background: var(--secondary-color);
+}
+
+.accept-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Download Page Styles */
+.download-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.download-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.download-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+}
+
+.download-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.download-card h2 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.download-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.download-button {
+    display: inline-block;
+    background: #2196F3;
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.download-button:hover {
+    background: #1976D2;
+}
+
+.download-info {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 3rem;
+    border: 1px solid var(--border-color);
+}
+
+.download-info h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.download-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.download-info li {
+    color: #666;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.download-info li:before {
+    content: "•";
+    color: #2196F3;
+    position: absolute;
+    left: 0;
+}
+
+/* Authentication Pages Styles */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: var(--background-color);
+}
+
+.auth-card {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+}
+
+.auth-card h1 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.auth-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
+
+.auth-form input[type="email"]:focus,
+.auth-form input[type="password"]:focus {
+    border-color: var(--secondary-color);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.forgot-password {
+    color: #2196F3;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-button:hover {
+    background: var(--secondary-color);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Auth Form Styles */
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
+
+.auth-form input[type="text"]:focus {
+    border-color: var(--secondary-color);
+}
+
+.password-hint {
+    display: block;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.terms-checkbox a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.auth-form input:invalid {
+    border-color: #ff4444;
+}
+
+.auth-form input:invalid + .password-hint {
+    color: #ff4444;
+}
+
+/* Form validation messages */
+.auth-form input:invalid:focus {
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+}
+
+.auth-form input:valid:focus {
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.subscription-status {
+    margin-top: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.badge.active {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.badge.trial {
+    background-color: #2196F3;
+    color: var(--text-color);
+}
+
+.badge.inactive {
+    background-color: #f44336;
+    color: var(--text-color);
+}
+
+.expiry-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.profile-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.profile-section h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.profile-form {
+    max-width: 500px;
+}
+
+.profile-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.profile-button {
+    background-color: #2196F3;
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.profile-button:hover {
+    background-color: #1976D2;
+}
+
+.subscription-info {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.subscription-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.subscription-button:hover {
+    background-color: #388E3C;
+}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile - Mysticscape{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>My Profile</h1>
+        <p class="subscription-status">
+            {% if current_user.has_paid %}
+                <span class="badge active">Active Subscription</span>
+                {% if current_user.payment_expiry %}
+                    <span class="expiry-date">Expires: {{ current_user.payment_expiry.strftime('%Y-%m-%d') }}</span>
+                {% endif %}
+            {% elif current_user.trial_end_date and current_user.trial_end_date > now %}
+                <span class="badge trial">Trial Period</span>
+                <span class="expiry-date">Expires: {{ current_user.trial_end_date.strftime('%Y-%m-%d') }}</span>
+            {% else %}
+                <span class="badge inactive">No Active Subscription</span>
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="profile-card">
+        <div class="profile-section">
+            <h2>Account Information</h2>
+            <form method="POST" action="{{ url_for('update_profile') }}" class="profile-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="{{ current_user.username }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="{{ current_user.email }}" required>
+                </div>
+
+                <button type="submit" class="profile-button">Update Profile</button>
+            </form>
+        </div>
+
+        <div class="profile-section">
+            <h2>Change Password</h2>
+            <form method="POST" action="{{ url_for('change_password') }}" class="profile-form">
+                <div class="form-group">
+                    <label for="current_password">Current Password</label>
+                    <input type="password" id="current_password" name="current_password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="new_password">New Password</label>
+                    <input type="password" id="new_password" name="new_password" required>
+                    <small class="password-hint">At least 8 characters with letters and numbers</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_new_password">Confirm New Password</label>
+                    <input type="password" id="confirm_new_password" name="confirm_new_password" required>
+                </div>
+
+                <button type="submit" class="profile-button">Change Password</button>
+            </form>
+        </div>
+
+        <div class="profile-section">
+            <h2>Subscription Details</h2>
+            <div class="subscription-info">
+                <p><strong>Current Plan:</strong> 
+                    {% if current_user.subscription_type == 'pro' %}
+                        Pro ($1000/year)
+                    {% elif current_user.subscription_type == 'basic' %}
+                        Basic ($50/month)
+                    {% else %}
+                        No active plan
+                    {% endif %}
+                </p>
+                {% if current_user.trial_end_date %}
+                    <p><strong>Trial Status:</strong> 
+                        {% if current_user.trial_end_date > now %}
+                            Active (Ends {{ current_user.trial_end_date.strftime('%Y-%m-%d') }})
+                        {% else %}
+                            Expired
+                        {% endif %}
+                    </p>
+                {% endif %}
+                {% if not current_user.has_paid %}
+                    <a href="{{ url_for('payment') }}" class="subscription-button">Upgrade Now</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('confirm_new_password').addEventListener('input', function() {
+    const password = document.getElementById('new_password').value;
+    const confirmPassword = this.value;
+    
+    if (password !== confirmPassword) {
+        this.setCustomValidity('Passwords must match');
+    } else {
+        this.setCustomValidity('');
+    }
+});
+
+document.getElementById('new_password').addEventListener('input', function() {
+    const password = this.value;
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    
+    if (!regex.test(password)) {
+        this.setCustomValidity('Password must be at least 8 characters with letters and numbers');
+    } else {
+        this.setCustomValidity('');
+    }
+});
+</script>
+{% endblock %}
