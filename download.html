@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Mysticscape - Thank You!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Verify subscription and show appropriate download
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subscriptionId = urlParams.get('subscription');
+            
+            if (subscriptionId) {
+                document.getElementById('download-section').style.display = 'block';
+                document.getElementById('subscription-id').textContent = subscriptionId;
+            } else {
+                window.location.href = '/'; // Redirect if no subscription ID
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Mysticscape Logo">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#support">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="thank-you">
+            <h1>Thank You for Your Purchase!</h1>
+            <p>Your subscription ID: <span id="subscription-id"></span></p>
+        </section>
+
+        <section id="download-section" style="display: none;">
+            <h2>Download Mysticscape</h2>
+            <div class="download-options">
+                <div class="download-card">
+                    <h3>Windows</h3>
+                    <p>System Requirements:</p>
+                    <ul>
+                        <li>Windows 10/11 64-bit</li>
+                        <li>8GB RAM (16GB recommended)</li>
+                        <li>64-bit Intel/AMD CPU with SSE4.2</li>
+                    </ul>
+                    <a href="/downloads/mysticscape-win64.zip" class="download-button">Download for Windows</a>
+                </div>
+                
+                <div class="download-card">
+                    <h3>macOS</h3>
+                    <p>System Requirements:</p>
+                    <ul>
+                        <li>macOS 10.15 or later</li>
+                        <li>8GB RAM (16GB recommended)</li>
+                        <li>64-bit Intel or Apple Silicon</li>
+                    </ul>
+                    <a href="/downloads/mysticscape-mac.dmg" class="download-button">Download for macOS</a>
+                </div>
+                
+                <div class="download-card">
+                    <h3>Linux</h3>
+                    <p>System Requirements:</p>
+                    <ul>
+                        <li>Ubuntu 20.04 or later</li>
+                        <li>8GB RAM (16GB recommended)</li>
+                        <li>64-bit Intel/AMD CPU</li>
+                    </ul>
+                    <a href="/downloads/mysticscape-linux.tar.gz" class="download-button">Download for Linux</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Download & Install</h3>
+                    <p>Choose your platform above and follow the installation instructions</p>
+                </div>
+                <div class="step">
+                    <h3>2. Activate Your License</h3>
+                    <p>Launch Mysticscape and enter your subscription ID when prompted</p>
+                </div>
+                <div class="step">
+                    <h3>3. Join the Community</h3>
+                    <p>Visit our <a href="/community">community forums</a> to connect with other users</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="support-info">
+            <h2>Need Help?</h2>
+            <p>If you encounter any issues during installation or activation:</p>
+            <ul>
+                <li>Check our <a href="/docs">documentation</a></li>
+                <li>Visit our <a href="/support">support center</a></li>
+                <li>Email us at wambuiraymond03@gmail.com</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>Email: wambuiraymond03@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">YouTube</a>
+                <a href="#" class="social-link">Discord</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Mysticscape Software. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

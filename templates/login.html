@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysticscape - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Login to Mysticscape</h2>
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group remember-me">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
