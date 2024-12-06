@@ -275,13 +275,31 @@ a:hover {
 .logo {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
+    padding: 10px;
 }
 
 .logo img {
     max-height: 50px;
     width: auto;
-    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive logo sizing */
+@media screen and (max-width: 768px) {
+    .logo img {
+        max-height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        max-height: 35px;
+    }
 }
 
 .logo a {
