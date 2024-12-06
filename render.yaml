@@ -2,7 +2,9 @@ services:
   - type: web
     name: mysticscape
     env: python
-    buildCommand: pip install -r website/requirements.txt
+    buildCommand: |
+      pip install -r website/requirements.txt
+      cp -r website/static /opt/render/project/src/
     startCommand: cd website && gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
